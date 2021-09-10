@@ -15,7 +15,7 @@ wget https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O /tmp/helm.ta
 tar -zxvf /tmp/helm.tar.gz -C /usr/bin/ --strip-components=1 && \
 chmod +x /usr/bin/* && \
 rm -rf /tmp/helm.tar.gz && \
-helm plugin install https://github.com/hayorov/helm-gcs && \
-curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash && \
-curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh && \
-yum clean all && rm -rf /var/yum/cache
+helm plugin install https://github.com/hayorov/helm-gcs
+RUN curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
+RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+RUN yum clean all && rm -rf /var/yum/cache
